@@ -105,7 +105,7 @@ if (preg_match('/^\/([Ss]tart)/', $text) or $text == '⤵️ برگرد به م�
         $stmt->close();
     }
     if(isset($data) and $data == "mainMenu"){
-        $res = editText($message_id, 'سلااام به ربات ویزویز خوش اومدی 🫡🌸
+        $res = editText($message_id, 'سلام به ربات RiolSerV خوش اومدی
 
 ما اینجاییم تا شما را بدون هیچ محدویتی به شبکه جهانی متصل کنیم ❤️
 
@@ -116,7 +116,7 @@ if (preg_match('/^\/([Ss]tart)/', $text) or $text == '⤵️ برگرد به م�
 🚪 /start
 ', $mainKeys);
         if(!$res->ok){
-            sendMessage('سلااام به ربات ویزویز خوش اومدی 🫡🌸
+            sendMessage('سلام به ربات RiolSerV خوش اومدی
 
 ما اینجاییم تا شما را بدون هیچ محدویتی به شبکه جهانی متصل کنیم ❤️
 
@@ -145,7 +145,7 @@ if (preg_match('/^\/([Ss]tart)/', $text) or $text == '⤵️ برگرد به م�
             ",
             $keys, "html",$admin);
         }
-        sendMessage('سلااام به ربات ویزویز خوش اومدی 🫡🌸
+        sendMessage('سلام به ربات RiolSerV خوش اومدی
 
 ما اینجاییم تا شما را بدون هیچ محدویتی به شبکه جهانی متصل کنیم ❤️
 
@@ -201,7 +201,7 @@ if($userInfo['step'] == "addNewAdmin" && $from_id === $admin && $text != $cancel
         
         sendMessage("لیست ادمین ها",getAdminsKeys());
     }else{
-        sendMessage("😡 | مگه نمیگم فقط عدد بفرس نمیفهمی؟ یا خودتو زدی به نفهمی؟");
+        sendMessage("لطفا فقط عدد بفرستید");
     }
 }
 if(($data=="botSettings" or preg_match("/^changeBot(\w+)/",$data,$match)) && ($from_id == $admin || $userInfo['isAdmin'] == true)){
@@ -307,7 +307,7 @@ if($userInfo['step'] == "userReports" && $text != $cancelText && ($from_id == $a
             setUser();
         }else sendMessage("کاربری با این آیدی یافت نشد");
     }else{
-        sendMessage("😡|لطفا فقط عدد ارسال کن");
+        sendMessage("لطفا فقط عدد ارسال کنید");
     }
 }
 if($data=="inviteSetting" && ($from_id == $admin || $userInfo['isAdmin'] == true)){
@@ -443,7 +443,7 @@ if($userInfo['step'] == "editInviteAmount"){
             ]]); 
         sendMessage("✅ تنظیمات بازاریابی",$keys);
         setUser();
-    }else sendMessage("😡 | مگه نمیگم فقط عدد بفرس نمیفهمی؟ یا خودتو زدی به نفهمی؟");
+    }else sendMessage("لطفا فقط عدد ارسال کنید");
 }
 if($userInfo['step'] == "editRewardTime" && ($from_id == $admin || $userInfo['isAdmin'] == true) && $text != $cancelText){
     if(!is_numeric($text)){
@@ -566,7 +566,7 @@ if($userInfo['step'] =="transferMyWallet" && $text != $cancelText){
                 sendMessage("لطفا مبلغ مورد نظر رو وارد کن");
             }else sendMessage("کاربری با این آیدی یافت نشد");
         }else sendMessage("میخای به خودت انتقال بدی ؟؟");
-    }else sendMessage("😡 | مگه نمیگم فقط عدد بفرس نمیفهمی؟ یا خودتو زدی به نفهمی؟");
+    }else sendMessage("لطفا فقط عدد ارسال کنید");
 }
 if(preg_match('/^tranfserUserAmount(\d+)/',$userInfo['step'],$match) && $text != $cancelText){
     if(is_numeric($text)){
@@ -586,7 +586,7 @@ if(preg_match('/^tranfserUserAmount(\d+)/',$userInfo['step'],$match) && $text !=
             sendMessage("✅|مبلغ " . number_format($text) . " تومان به کیف پول کاربر مورد نظر شما انتقال یافت",$removeKeyboard);
             sendMessage("لطفا یکی از کلید های زیر را انتخاب کنید",$mainKeys);
         }else sendMessage("موجودی حساب شما کم است");
-    }else sendMessage("😡 | مگه نمیگم فقط عدد بفرس نمیفهمی؟ یا خودتو زدی به نفهمی؟");
+    }else sendMessage("لطفا فقط عدد ارسال کنید");
 }
 if($data=="increaseMyWallet"){
     delMessage();
@@ -595,7 +595,7 @@ if($data=="increaseMyWallet"){
 }
 if($userInfo['step'] == "increaseMyWallet" && $text != $cancelText){
     if(!is_numeric($text)){
-        sendMessage("😡 | مگه نمیگم فقط عدد بفرس نمیفهمی؟ یا خودتو زدی به نفهمی؟");
+        sendMessage("لطفا فقط عدد ارسال کنید");
         exit();
     }
     elseif($text < 5000){
@@ -775,7 +775,7 @@ if($userInfo['step'] == "increaseUserWallet" && ($from_id == $admin || $userInfo
 🚪 /start',$mainKeys);
         }
     }else{
-        sendMessage("😡 | مگه نمیگم فقط عدد بفرس نمیفهمی؟ یا خودتو زدی به نفهمی؟");
+        sendMessage("لطفا فقط عدد ارسال کنید");
     }
 }
 if(preg_match('/^increaseWalletUser(\d+)/',$userInfo['step'], $match) && $text != $cancelText && ($from_id == $admin || $userInfo['isAdmin'] == true)){
@@ -792,7 +792,7 @@ if(preg_match('/^increaseWalletUser(\d+)/',$userInfo['step'], $match) && $text !
 🚪 /start',$mainKeys);
         setUser();
     }else{
-        sendMessage("😡 | مگه نمیگم فقط عدد بفرس نمیفهمی؟ یا خودتو زدی به نفهمی؟");
+        sendMessage("لطفا فقط عدد ارسال کنید");
     }
 }
 if($data=="editRewardChannel" && ($from_id == $admin || $userInfo['isAdmin'] == true)){
@@ -985,12 +985,12 @@ if(preg_match('/^createAccDate(\d+)/',$userInfo['step'],$match) && $text != $can
             sendMessage("عدد باید بیشتر از 0 باشه");
         }
     }else{
-        sendMessage('😡 | مگه نمیگم فقط عدد بفرس نمیفهمی؟ یا خودتو زدی به نفهمی؟');
+        sendMessage("لطفا فقط عدد ارسال کنید");
     }
 }
 if(preg_match('/^createAccVolume(\d+)_(\d+)/',$userInfo['step'],$match) && $text != $cancelText){
     if(!is_numeric($text)){
-        sendMessage("😡 | مگه نمیگم فقط عدد بفرس نمیفهمی؟ یا خودتو زدی به نفهمی؟");
+        sendMessage("لطفا فقط عدد ارسال کنید");
         exit();
     }elseif($text <=0){
         sendMessage("مقداری بزرگتر از 0 وارد کن");
@@ -1004,7 +1004,7 @@ if(preg_match('/^createAccVolume(\d+)_(\d+)/',$userInfo['step'],$match) && $text
 }
 if(preg_match('/^createAccAmount(\d+)_(\d+)_(\d+)/',$userInfo['step'], $match) && $text != $cancelText){
     if(!is_numeric($text)){
-        sendMessage("😡 | مگه نمیگم فقط عدد بفرس نمیفهمی؟ یا خودتو زدی به نفهمی؟");
+        sendMessage("لطفا فقط عدد ارسال کنید");
         exit();
     }elseif($text <=0){
         sendMessage("مقداری بزرگتر از 0 وارد کن");
@@ -1724,7 +1724,7 @@ if($data=="messageToSpeceficUser" && ($from_id == $admin || $userInfo['isAdmin']
 }
 if($userInfo['step'] == "messageToSpeceficUser" && $text != $cancelText && ($from_id == $admin || $userInfo['isAdmin'] == true)){
     if(!is_numeric($text)){
-        sendMessage("😡 | مگه نمیگم فقط عدد بفرس نمیفهمی؟ یا خودتو زدی به نفهمی؟");
+        sendMessage("لطفا فقط عدد ارسال کنید");
         exit();
     }
     $stmt = $connection->prepare("SELECT * FROM `users` WHERE `userid` = ?");
@@ -1878,7 +1878,7 @@ if(preg_match('/selectCustomePlan(\d+)_(\d+)/',$data, $match) && ($botState['sel
 }
 if(preg_match('/selectCustomPlanGB(\d+)_(\d+)/',$userInfo['step'], $match) && ($botState['sellState']=="on" ||$from_id ==$admin) && $text != $cancelText){
     if(!is_numeric($text)){
-        sendMessage("😡|لطفا فقط عدد ارسال کن");
+        sendMessage("لطفا فقط عدد ارسال کنید");
         exit();
     }
     elseif($text <=0){
@@ -1962,7 +1962,7 @@ if((preg_match('/^discountCustomPlanDay(\d+)_(\d+)_(\d+)_(\d+)_(\d+)/',$userInfo
         }else sendMessage("😔|کد تخفیفی که وارد کردی معتبر نیس");
     }else{
         if(!is_numeric($text)){
-            sendMessage("😡|لطفا فقط عدد ارسال کن");
+            sendMessage("لطفا فقط عدد ارسال کنید");
             exit();
         }
         elseif($text <=0){
@@ -4492,7 +4492,7 @@ if($userInfo['step'] == "banUser" && ($from_id == $admin || $userInfo['isAdmin']
 
 🚪 /start",$adminKeys);
     }else{
-        sendMessage("😡 | مگه نمیگم فقط عدد بفرس نمیفهمی؟ یا خودتو زدی به نفهمی؟");
+        sendMessage("لطفا فقط عدد بفرستید");
     }
 }
 if($data=="mainMenuButtons" && ($from_id == $admin || $userInfo['isAdmin'] == true)){
@@ -4561,7 +4561,7 @@ if($userInfo['step'] == "unbanUser" && ($from_id == $admin || $userInfo['isAdmin
 
 🚪 /start",$adminKeys);
     }else{
-        sendMessage("😡 | مگه نمیگم فقط عدد بفرس نمیفهمی؟ یا خودتو زدی به نفهمی؟");
+        sendMessage("لطفا فقط عدد بفرستید");
     }
 }
 if(preg_match("/^reply_(.*)/",$data,$match) and  ($from_id == $admin || $userInfo['isAdmin'] == true)){
@@ -7812,7 +7812,7 @@ if($data == "managePanel" and (($from_id == $admin || $userInfo['isAdmin'] == tr
 👤 عزیزم به بخش مدیریت خوشومدی 
 🤌 هرچی نیاز داشتی میتونی اینجا طبق نیازهات اضافه و تغییر بدی ، عزیزم $first_name جان اگه از فروش ربات درآمد داری از من حمایت کن تا پروژه همیشه آپدیت بمونه !
 
-🆔 @wizwizch
+🆔 @RiolnuiV
 
 🚪 /start
 ";
